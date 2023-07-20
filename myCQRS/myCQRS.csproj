@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.0" />
+    <PackageReference Include="MediatR" Version="10.0.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.1" />
+    <PackageReference Include="FluentValidation" Version="11.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="MediatR" />
+    <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="DataStore\" />
+    <None Remove="Commands\" />
+    <None Remove="Queries\" />
+    <None Remove="Handlers\" />
+    <None Remove="Notifications\" />
+    <None Remove="Behaviors\" />
+    <None Remove="FluentValidation.DependencyInjectionExtensions" />
+    <None Remove="FluentValidation" />
+    <None Remove="Validators\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataStore\" />
+    <Folder Include="Commands\" />
+    <Folder Include="Queries\" />
+    <Folder Include="Handlers\" />
+    <Folder Include="Notifications\" />
+    <Folder Include="Behaviors\" />
+    <Folder Include="Validators\" />
+  </ItemGroup>
+</Project>
