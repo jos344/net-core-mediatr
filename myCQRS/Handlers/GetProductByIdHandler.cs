@@ -14,8 +14,7 @@ namespace myCQRS.Handlers
 
         public GetProductByIdHandler(FakeDataStore fakeDataStore) => _fakeDataStore = fakeDataStore;
 
-        public async Task<Product> Handle(GetProductByIdQuery request, CancellationToken cancellationToken) =>
-            await _fakeDataStore.GetProductById(request.Id);
+        public async Task<Product> Handle(GetProductByIdQuery request, CancellationToken cancellationToken) => await _fakeDataStore.GetProductById(request.Id);
 
     }
 }

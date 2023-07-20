@@ -12,11 +12,11 @@ namespace myCQRS.DataStore
         public FakeDataStore()
         {
             _products = new List<Product>
-        {
+            {
             new Product { Id = 1, Name = "Test Product 1" },
             new Product { Id = 2, Name = "Test Product 2" },
             new Product { Id = 3, Name = "Test Product 3" }
-        };
+            };
         }
 
         public async Task AddProduct(Product product)
@@ -27,8 +27,7 @@ namespace myCQRS.DataStore
 
         public async Task<IEnumerable<Product>> GetAllProducts() => await Task.FromResult(_products);
 
-        public async Task<Product> GetProductById(int id) =>
-    await Task.FromResult(_products.Single(p => p.Id == id));
+        public async Task<Product> GetProductById(int id) => await Task.FromResult(_products.Single(p => p.Id == id));
 
 
         public async Task EventOccured(Product product, string evt)
@@ -36,7 +35,6 @@ namespace myCQRS.DataStore
             _products.Single(p => p.Id == product.Id).Name = $"{product.Name} evt: {evt}";
             await Task.CompletedTask;
         }
-
 
     }
 }

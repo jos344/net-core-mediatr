@@ -27,25 +27,20 @@ namespace myCQRS.Controllers
         public async Task<ActionResult> GetProducts()
         {
             var products = await _mediator.Send(new GetProductsQuery());
-
             return Ok(products);
         }
 
         [HttpPost]
         public async Task<ActionResult> AddProduct([FromBody] Product product)
-        {
-            {
-                await _mediator.Send(new AddProductCommand(product));
-
-                return StatusCode(201);
-            }
+        { 
+            await _mediator.Send(new AddProductCommand(product));
+            return StatusCode(201);  
         }
 
         [HttpGet("{id:int}", Name = "GetProductById")]
         public async Task<ActionResult> GetProductById(int id)
         {
             var product = await _mediator.Send(new GetProductByIdQuery(id));
-
             return Ok(product);
         }
 

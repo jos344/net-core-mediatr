@@ -16,7 +16,7 @@ namespace myCQRS.Handlers
         public GetProductsHandler(FakeDataStore fakeDataStore) => _fakeDataStore = fakeDataStore;
 
 
-        //  returns the values from our FakeDataStore
+        // returns the values from our FakeDataStore
         public async Task<IEnumerable<Product>> Handle(GetProductsQuery request,
             CancellationToken cancellationToken) => await _fakeDataStore.GetAllProducts();
     }
